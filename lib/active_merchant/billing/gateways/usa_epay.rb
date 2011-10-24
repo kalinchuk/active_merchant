@@ -183,6 +183,7 @@ module ActiveMerchant #:nodoc:
       def post_data(action, parameters = {})
         parameters[:command]  = TRANSACTIONS[action]
         parameters[:key] = @options[:login]
+        parameters[:pin] = @options[:pin]
         parameters[:software] = 'Active Merchant'
         parameters[:testmode] = @options[:test] ? 1 : 0
 
